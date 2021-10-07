@@ -4,9 +4,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile.init
-
-    tty: true
+      dockerfile: project-init/Dockerfile.init
 
     volumes:
       - .:/app

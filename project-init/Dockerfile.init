@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.9 as poetry-init
 
 WORKDIR /app
 ENV YOUR_ENV=${YOUR_ENV} \
@@ -8,7 +8,7 @@ ENV YOUR_ENV=${YOUR_ENV} \
   PIP_NO_CACHE_DIR=off \
   PIP_DISABLE_PIP_VERSION_CHECK=on \
   PIP_DEFAULT_TIMEOUT=100 \
-  POETRY_HOME=/my-poetry \
+  POETRY_HOME=/py-poetry \
   POETRY_VIRTUALENVS_CREATE=0 \
   POETRY_VERSION=1.1.11
 
@@ -16,6 +16,6 @@ ENV YOUR_ENV=${YOUR_ENV} \
 COPY bin bin
 
 RUN python bin/install-poetry.py
-ENV PATH="/my-poetry/bin:$PATH"
+ENV PATH="${POETRY_HOME}/bin:$PATH"
 
 CMD poetry init -n
