@@ -18,4 +18,4 @@ COPY bin bin
 RUN python bin/install-poetry.py
 ENV PATH="${POETRY_HOME}/bin:$PATH"
 
-CMD poetry init -n
+CMD poetry init -n && poetry lock
