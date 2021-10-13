@@ -10,3 +10,14 @@ services:
 
     volumes:
       - .:/app
+
+  black:
+    build:
+      context: .
+      dockerfile: dev/Dockerfile-black
+
+    ports:
+      - "45484:45484"
+
+    volumes:
+      - .:/app
