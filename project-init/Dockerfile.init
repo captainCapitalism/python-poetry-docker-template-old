@@ -13,9 +13,7 @@ ENV YOUR_ENV=${YOUR_ENV} \
   POETRY_VERSION=1.1.11
 
 
-COPY bin bin
-
-RUN python bin/install-poetry.py
+RUN curl -sSL https://install.python-poetry.org/ | python
 ENV PATH="${POETRY_HOME}/bin:$PATH"
 
 CMD poetry init -n && poetry lock
