@@ -1,3 +1,5 @@
+Check out this project based on cookiecutter instead: https://github.com/captainCapitalism/python-poetry-docker-template
+
 # Setting up
 1. Remove initialization scripts.
 ```
